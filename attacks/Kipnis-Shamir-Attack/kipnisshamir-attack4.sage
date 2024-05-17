@@ -4,10 +4,10 @@ import time
 def generate_mayo_system(n, o, v):
     R = PolynomialRing(GF(2), 'x', n)
     variables = R.gens()
-    
+    # Generate o quadratic polynomials
     polynomials = []
-    for _ in range(o):  # Generate o quadratic polynomials
-        poly = sum([R.random_element(degree=2) for _ in range(v)])  # Only vinegar variables contribute freely
+    for _ in range(o):  
+        poly = sum([R.random_element(degree=2) for _ in range(v)]) 
         polynomials.append(poly)
     
     return polynomials, variables
@@ -93,8 +93,8 @@ def vary_parameters(n_values, o_values, v_values, num_runs):
     return results
 
 # Define the range of parameters for the reduced MAYO scheme
-n_values = [8, 10, 12]  # Different values for the total number of variables
-o_values = [4, 5, 6]  # Different values for the number of oil variables
+n_values = [8, 10, 12]  # Total number of variables
+o_values = [4, 5, 6]  # Number of oil variables
 v_values = [4, 5, 6]  # Corresponding vinegar variables calculated as n - o
 num_runs = 10  # Number of runs to average
 
