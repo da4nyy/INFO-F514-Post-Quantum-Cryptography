@@ -12,7 +12,7 @@ variables = R.gens()
 # Generate a random system of multivariate quadratic equations (MQ system)
 polynomials = []
 for _ in range(m):
-    poly = sum([R.random_element(degree=2) for _ in range(n)])  # Generate random quadratic polynomials
+    poly = sum([R.random_element(degree=2) for _ in range(n)])  
     polynomials.append(poly)
 
 # Display the generated polynomials
