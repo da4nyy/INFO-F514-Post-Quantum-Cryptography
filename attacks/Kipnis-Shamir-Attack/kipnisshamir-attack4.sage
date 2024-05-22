@@ -1,23 +1,23 @@
 from sage.all import *
 import time
 
-# Génère le système de polynômes pour la version réduite du schéma MAYO
+# Generate the system of polynomials for the reduced MAYO scheme
 def generate_mayo_system(n, m, o):
-    R = PolynomialRing(GF(2), 'x', n)  # Crée un anneau polynomial avec n variables sur GF(2)
-    variables = R.gens()  # Génère les variables
-    v = n - o  # Calcule le nombre de variables de vinaigre
+    R = PolynomialRing(GF(2), 'x', n)  # Create a polynomial ring with n variables over GF(2)
+    variables = R.gens()  # Generate the variables
+    v = n - o  # Calculate the number of vinegar variables
     polynomials = []
     for _ in range(m):
-        # Génère un polynôme quadratique aléatoire avec des variables de vinaigre
+        # Generate a random quadratic polynomial with vinegar variables
         poly = sum([R.random_element(degree=2) for _ in range(v)])
         polynomials.append(poly)
     return polynomials, variables
 
-# Implémentation de l'attaque Kipnis-Shamir
+# Kipnis-Shamir attack implementation
 def kipnis_shamir_attack(polynomials, n, m, o):
-    R = PolynomialRing(GF(2), 'x', n)  # Crée un anneau polynomial avec n variables sur GF(2)
-    variables = R.gens()  # Génère les variables
-    # Construit la représentation matricielle du système
+    R = PolynomialRing(GF(2), 'x', n)  # Create a polynomial ring with n variables over GF(2)
+    variables = R.gens()  # Generate the variables
+    # Construct the matrix representation of the system
     M = Matrix(GF(2), m, n * (n + 1) // 2 + n + 1)
     for row, poly in enumerate(polynomials):
         for monomial, coeff in poly.dict().items():
@@ -30,13 +30,13 @@ def kipnis_shamir_attack(polynomials, n, m, o):
             if monomial_idx < M.ncols():
                 M[row, monomial_idx] = coeff
     try:
-        # Tente de résoudre le système linéaire pour trouver la solution
+        # Attempt to solve the linear system to find the solution
         solution = M.right_kernel().basis()
         return solution, M
     except ValueError:
         return None, M
 
-# Exécute plusieurs tests pour évaluer la performance et le taux de réussite
+# Run multiple tests to evaluate performance and success rate
 def run_multiple_tests(n, m, o, num_runs):
     total_time = 0
     total_success = 0
@@ -55,7 +55,7 @@ def run_multiple_tests(n, m, o, num_runs):
     success_rate = (total_success / num_runs) * 100
     return float(avg_time), float(success_rate), all_results
 
-# Varie les paramètres pour observer la performance et le taux de réussite sous différentes configurations
+# Vary parameters to observe performance and success rate under different configurations
 def vary_parameters(n_values, m_values, o_values, num_runs):
     results = []
     total_successful_runs = 0
@@ -88,11 +88,12 @@ def vary_parameters(n_values, m_values, o_values, num_runs):
     print(f"Total success rate for all values: {float(total_success_rate):.2f}%")
     return results
 
-# Définir la plage de paramètres pour la version réduite du schéma MAYO
-n_values = [20, 25, 30, 35]  # Nombre total de variables
-m_values = [10, 12, 15, 18]  # Nombre d'équations
-o_values = [6, 8, 10, 12]    # Nombre de variables oil
-num_runs = 10                # Nombre de tests pour faire la moyenne
+# Define the range of parameters for the reduced MAYO scheme
+n_values = [20, 25, 30, 35]  # Total number of variables
+m_values = [10, 12, 15, 18]  # Number of equations
+o_values = [6, 8, 10, 12]    # Number of oil variables
+num_runs = 10                # Number of tests to average
 
-# Exécute les tests avec les paramètres variés
+# Run the tests with varying parameters
 results = vary_parameters(n_values, m_values, o_values, num_runs)
+
