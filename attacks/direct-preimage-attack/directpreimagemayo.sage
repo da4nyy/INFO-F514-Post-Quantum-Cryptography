@@ -3,7 +3,7 @@ from sage.all import *
 # Parameters
 q = 3  # Field size
 n = 10  # Number of variables
-m = 10  # Number of equations (adjusted to equal the number of variables)
+m = 10  # Number of equations 
 o = 3   # Oil variables
 v = n - o  # Vinegar variables
 k = 2   # Whipping parameter
