@@ -26,7 +26,7 @@ Copy the SageMath scripts (kipnisshamir-attack.sage and directpreimageattack.sag
 Run the SageMath Docker container with the scripts directory mounted:
 
 ```bash
-docker run -it -v $(pwd)/sage-scripts:/sage-scripts sagemath/sage:latest
+docker run -it -v  $(pwd)/sage-scripts:/sage-scripts sagemath/sagemath:latest
 ```
 Running the Kipnis-Shamir Attack
 To execute the Kipnis-Shamir attack script, run the following command inside the Docker container:
