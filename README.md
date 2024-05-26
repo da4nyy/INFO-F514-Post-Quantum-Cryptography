@@ -32,13 +32,13 @@ Running the Kipnis-Shamir Attack
 To execute the Kipnis-Shamir attack script, run the following command inside the Docker container:
 
 ```bash
-load("/sage-scripts/kipnisshamir-attack.sage")
+load("/sage-scripts/kipnis_shamir_attack.sage")
 ```
 Running the Direct Preimage Attack
 To execute the direct preimage attack script, run the following command inside the Docker container:
 
 ```bash
-load("/sage-scripts/directpreimageattack.sage)
+load("/sage-scripts/directpreimagemayo.sage)
 ```
 # Script Details
 ## Kipnis-Shamir Attack
