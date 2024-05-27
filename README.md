@@ -1,7 +1,7 @@
 # INFO-F514-Post-Quantum-Cryptography
 # MAYO Signature Scheme Attacks
 
-This project implements and tests cryptographic attacks on a reduced version of the MAYO signature scheme using SageMath. The implemented attacks are the Kipnis-Shamir attack and the direct preimage attack.
+This files in the attacks/ serves to implement and test cryptographic attacks on a reduced version of the MAYO signature scheme using SageMath. The implemented attacks are the Kipnis-Shamir attack and the direct preimage attack.
 
 ## Requirements
 
