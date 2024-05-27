@@ -1,0 +1,11 @@
+[package]
+name = "mayo_rust"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes = "0.8.4"
+ctr = "0.9"
+rand = "0.8.5"
+array-init = "1.0"
+sha3 = "0.10"
