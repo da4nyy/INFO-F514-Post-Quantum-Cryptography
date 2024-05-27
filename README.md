@@ -4,7 +4,7 @@
 **implementation**/: Contains the implementation of the MAYO signature scheme using Rust.
 # MAYO Signature Scheme Attacks
 
-This files in the attacks/ serves to implement and test cryptographic attacks on a reduced version of the MAYO signature scheme using SageMath. The implemented attacks are the Kipnis-Shamir attack and the direct preimage attack.
+The files in the attacks/ serves to implement and test cryptographic attacks on a reduced version of the MAYO signature scheme using SageMath. The implemented attacks are the Kipnis-Shamir attack and the direct preimage attack.
 
 ## Requirements
 
