@@ -24,7 +24,7 @@ Create a directory for the SageMath scripts if not already done:
 ```bash
 mkdir -p sage-scripts
 ```
-Copy the SageMath scripts (kipnisshamir-attack.sage and directpreimageattack.sage) into the sage-scripts directory.
+Copy the SageMath scripts (kipnis_shamir_attack.sage and directpreimageattack.sage) into the sage-scripts directory.
 
 Run the SageMath Docker container with the scripts directory mounted:
 
