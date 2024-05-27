@@ -3,8 +3,8 @@
 
 This project implements the MAYO signature scheme using Rust.  
 
-The implemenation is based on the official mayo specs available here : https://pqmayo.org/assets/specs/mayo.pdf
-We also used these two implementaion :
+The implemenation is based on the official mayo specs available here : https://pqmayo.org/assets/specs/mayo.pdf  
+We also used these two implementations :
 - https://github.com/PQCMayo/MAYO-C
 - https://github.com/PQCMayo/MAYO-sage
 
@@ -14,7 +14,7 @@ We also used these two implementaion :
 
 ## Running 
 
-Firstly, you need to build the project :
+First, you need to build the project :
 ```
 cargo build
 ```
