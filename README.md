@@ -46,3 +46,29 @@ The kipnisshamir-attack.sage script generates a random MQ (multivariate quadrati
 
 ## Direct Preimage Attack
 The directpreimageattack.sage script generates a random MQ system and attempts to solve it using Gröbner basis techniques.
+
+# Implementation of the MAYO alogrithm in Rust
+
+The files in the /implementation/ folder serves to implement the MAYO signature scheme using Rust.  
+
+The implemenation is based on the official mayo specs available here : https://pqmayo.org/assets/specs/mayo.pdf  
+We also used these two implementations :
+- https://github.com/PQCMayo/MAYO-C
+- https://github.com/PQCMayo/MAYO-sage
+
+
+## Requirements   
+- Rust  (https://www.rust-lang.org/fr/tools/install)
+
+## Running 
+
+First, you need to build the project :
+```
+cargo build
+```
+
+Then to launch the implmentation :
+```
+cargo run
+```
+
